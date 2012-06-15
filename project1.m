@@ -1,3 +1,7 @@
+% ITSP Project
+
+% MATLAB Code for Coolpic Editor
+
 function varargout = project1(varargin)
 % PROJECT1 MATLAB code for project1.fig
 %      PROJECT1, by itself, creates a new PROJECT1 or raises the existing
@@ -83,6 +87,8 @@ function pushbutton1_Callback(hObject, eventdata, handles)
 % hObject    handle to pushbutton1 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
+% Invert Effect
+% Take an image as input and save it.
 B=handles.image;
 B=255-B;
 axes(handles.axes3)
@@ -97,6 +103,7 @@ function pushbutton2_Callback(hObject, eventdata, handles)
 % hObject    handle to pushbutton2 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
+% Code to browse image in directories and take an image as input.
 [b a]=uigetfile('*.jpg;*.tif;*.png;*.bmp');
 if a==0 & b==0
     return
@@ -115,6 +122,7 @@ function pushbutton3_Callback(hObject, eventdata, handles)
 % hObject    handle to pushbutton3 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
+% Code for saving image in different formats.
 A=handles.image2;
 J={'*.jpg', 'JPEG picture';...
     '*.png', 'PNG picture';...
@@ -164,6 +172,7 @@ function pushbutton5_Callback(hObject, eventdata, handles)
 % hObject    handle to pushbutton5 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
+% Grayscale Effect
 A=handles.image;
 C=rgb2gray(A);
 B(:,:,1)=C;
@@ -184,6 +193,7 @@ function pushbutton6_Callback(hObject, eventdata, handles)
 % hObject    handle to pushbutton6 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
+% Paint Effect
 rgbImage = handles.image;
 % Get the dimensions of the image.  numberOfColorBands should be = 3.
 [rows columns numberOfColorBands] = size(rgbImage);
@@ -234,6 +244,7 @@ function pushbutton7_Callback(hObject, eventdata, handles)
 % hObject    handle to pushbutton7 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
+% Glassy Effect
 A=handles.image;
 m=6;                                                                   
 n=7;
@@ -264,7 +275,7 @@ function pushbutton8_Callback(hObject, eventdata, handles)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
 axes(handles.axes1)
-
+% Code for Multiple Effect pushbutton.
 D=handles.image2;
 handles.image=D;
 imshow(D);
@@ -306,6 +317,7 @@ function pushbutton10_Callback(hObject, eventdata, handles)
 % Take an image as input and read it.
 I = handles.image;
 % Convert the RGB image into gray image.
+
 C = rgb2gray(I);
 
 
@@ -386,6 +398,7 @@ function pushbutton12_Callback(hObject, eventdata, handles)
 % hObject    handle to pushbutton12 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
+% Code for Crop Image. After cropping the image double click on the image to get the cropped effect.
 A=handles.image;
 axes(handles.axes1)
 imshow(A)
@@ -585,6 +598,7 @@ function pushbutton15_Callback(hObject, eventdata, handles)
 % hObject    handle to pushbutton15 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
+% Code to generate Hazardous Image Effect
 I = handles.image;
 r=I(:,:,1);
 [q,w]=size(r);
